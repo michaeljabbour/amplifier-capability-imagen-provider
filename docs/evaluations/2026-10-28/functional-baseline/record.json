@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-28",
+  "status": "local-functional-baseline",
+  "notes": "324 native tests and 3 source-specific provider/configuration checks passed; no provider call.",
+  "raw_native_log_sha256": "fcd5ddb11556631af69a037c75a7206a9796e2f9ec724434d3aab9e1c16f557a",
+  "raw_log_location": "Private campaign records; not copied into public source because interpreter paths are irrelevant to the native result.",
+  "model_calls": 0,
+  "real_invites": 0,
+  "new_films": 0,
+  "functional_output": "test_environment_runtime_does_not_load_dotenv (__main__.Gate.test_environment_runtime_does_not_load_dotenv) ... <checkout>/src/server.py:1665: DeprecationWarning: __package__ != __spec__.parent\n  from .config.dotenv import load_dotenv\nok\ntest_explicit_provider_pin_cannot_fall_back (__main__.Gate.test_explicit_provider_pin_cannot_fall_back) ... ok\ntest_reference_requirement_cannot_be_dropped (__main__.Gate.test_reference_requirement_cannot_be_dropped) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nOK\n"
+}

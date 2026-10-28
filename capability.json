@@ -1,0 +1,104 @@
+{
+  "id": "image-provider",
+  "display_name": "Imagen Provider",
+  "kind": "tool",
+  "promise": "Generate images through one provider interface while preserving explicit feature requirements.",
+  "audience": "Agents and people needing image generation from a stable CLI or MCP tool.",
+  "trigger": "Generate or edit an image through an explicitly configured provider.",
+  "skill_path": null,
+  "modes": [
+    {
+      "name": "Select",
+      "when": "A request needs a provider.",
+      "output": "A qualified provider recommendation or a precise capability failure."
+    },
+    {
+      "name": "Generate",
+      "when": "The input and provider access are available.",
+      "output": "Provider-produced image bytes, paths and metadata."
+    },
+    {
+      "name": "Integrate",
+      "when": "An agent host needs the interface.",
+      "output": "Installed MCP/CLI entry points and verified namespace compatibility."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Fictional provider requirement",
+      "brief": "A fictional packaging mockup needs reference-image support.",
+      "before": "A missing provider silently drops the reference requirement.",
+      "after": "The selector either picks the available capable provider or stops with a setup error.",
+      "why": "Provider availability must not erase a requested feature.",
+      "fictional": true
+    }
+  ],
+  "boundaries": [
+    "Provider invocation can cost money and requires an approved environment credential. Selector/mock tests do not generate images.",
+    "The parked video-mcp stub is retained separately as reference; it is not advertised as a functioning video provider.",
+    "Server defaults to environment-only configuration; IMAGEN_MCP_CONFIG_PROFILE=local explicitly enables the retained dotenv setup profile."
+  ],
+  "install_commands": [
+    "python3 -m pip install .",
+    "imagen-mcp-cli --help"
+  ],
+  "runtime_install_commands": [
+    "python3 -m pip install .",
+    "imagen-mcp-cli --help"
+  ],
+  "verification": [
+    {
+      "name": "Native functional baseline",
+      "command": "python3 -m pytest -q",
+      "expected": "Original deterministic/mocked native checks pass.",
+      "status": "passed",
+      "evidence": "324 native tests and 3 source-specific provider/configuration checks passed; no provider call."
+    },
+    {
+      "name": "Source-specific acceptance",
+      "command": "python3 scripts/functional_gate.py",
+      "expected": "Check real configuration/schema/validation branches without remote execution.",
+      "status": "passed",
+      "evidence": "324 native tests and 3 source-specific provider/configuration checks passed; no provider call."
+    },
+    {
+      "name": "Live execution acceptance",
+      "command": "See native production guide",
+      "expected": "Explicitly authorized real provider, invite or video task.",
+      "status": "not-run",
+      "evidence": "No paid model call, real invitation, permission mutation, browser recording or film render was performed."
+    },
+    {
+      "name": "Clean wheel installation",
+      "command": "Build wheel, install into a fresh venv, then run installed entry points outside checkout",
+      "expected": "Stable native interfaces and packaged assets survive installation.",
+      "status": "passed",
+      "evidence": "Fresh-wheel distribution metadata, canonical/legacy namespace identity and real MCP stdio initialize/list-tools smoke passed outside the checkout with provider keys empty. No provider operation invoked."
+    }
+  ],
+  "sources": [
+    {
+      "repo": "imagen",
+      "commit": "649074c245267a455da796305d6f07b8a674af30",
+      "paths": [
+        "imagen_mcp",
+        "src/providers",
+        "src/models",
+        "src/services",
+        "src/tools",
+        "tests"
+      ],
+      "license": "MIT",
+      "role": "Retained native owner implementation, import/CLI interfaces and complete source history."
+    }
+  ],
+  "consolidation": [
+    "Public family repository name changes independently from stable native package/CLI/import identity.",
+    "No forced portable coaching wrapper; ordinary execution stays directly installable."
+  ],
+  "docs": [
+    "docs/CONSOLIDATION.md",
+    "docs/PROVIDER_SELECTION.md",
+    "docs/RELEASE_EVIDENCE_0.4.0.md"
+  ]
+}

@@ -1664,7 +1664,12 @@ def main() -> None:
 
     from .config.dotenv import load_dotenv
 
-    load_dotenv(override=False)
+    profile = os.getenv("IMAGEN_MCP_CONFIG_PROFILE", "environment").strip().lower()
+    if profile == "local":
+        load_dotenv(override=False)
+        get_settings.cache_clear()
+    elif profile != "environment":
+        raise ValueError("IMAGEN_MCP_CONFIG_PROFILE must be environment or local")
 
     transport = os.getenv("IMAGEN_MCP_TRANSPORT", "stdio").strip().lower()
     supported_transports = {"stdio", "streamable-http", "http", "sse"}

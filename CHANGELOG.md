@@ -1,3 +1,7 @@
+## Unreleased local consolidation
+
+- Separate the server environment-only runtime profile from explicit local dotenv setup. Native CLI/import compatibility is retained.
+
 # Changelog
 
 ## 0.4.0 - 2026-07-13

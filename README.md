@@ -1,4 +1,12 @@
-# imagen-mcp
+# Imagen Provider
+
+Generate images through one provider interface while preserving explicit feature requirements.
+
+Native identity stays `imagen-mcp`, `imagen_mcp` and the `src` compatibility namespace. Install locally with `python3 -m pip install .`. See [consolidation boundaries](docs/CONSOLIDATION.md).
+
+## Retained native guide
+
+### imagen-mcp
 
 A Model Context Protocol (MCP) server for intelligent multi-provider image generation.
 
