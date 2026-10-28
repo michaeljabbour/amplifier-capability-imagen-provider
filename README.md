@@ -51,11 +51,10 @@ A Model Context Protocol (MCP) server for intelligent multi-provider image gener
 
 ## Quick Start
 
-> This project was renamed from `imagen-mcp` to `imagen`
-> (`michaeljabbour/imagen-mcp` -> `michaeljabbour/imagen`; the old GitHub URL
-> redirects). The MCP server executable (`imagen-mcp`) and its `imagen_mcp`
-> Python package name are unchanged -- only the project/distribution name and
-> the smart-tool CLI (`imagen-mcp-smart` -> `imagen`) changed.
+> The canonical source repository is `amplifier-tool-imagen-provider`. The
+> Python distribution and Smart Tool CLI stay `imagen`; the MCP executable
+> stays `imagen-mcp`, and its import stays `imagen_mcp`. Older repository
+> URLs redirect to this source.
 
 Version 0.5.0 is released as the immutable `v0.5.0` Git tag and is not
 published on PyPI. Install it from that tag or a local checkout, then run the
@@ -63,7 +62,7 @@ canonical module or console script:
 
 ```bash
 git clone https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git
-cd imagen
+cd amplifier-tool-imagen-provider
 python3 -m pip install .
 python -m imagen_mcp
 # equivalent after installation: imagen-mcp
@@ -454,7 +453,7 @@ python3 -c "from imagen_mcp.providers import get_provider_registry; print(get_pr
 ```bash
 # Clone and install (runtime + dev tooling)
 git clone https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git
-cd imagen
+cd amplifier-tool-imagen-provider
 pip install -e ".[dev]"          # or: uv sync --extra dev
 
 # Install pre-commit hooks (ruff + mypy)
