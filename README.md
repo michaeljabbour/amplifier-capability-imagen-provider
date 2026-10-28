@@ -1,8 +1,43 @@
 # Imagen Provider
 
-Generate images through one provider interface while preserving explicit feature requirements.
+Generate the image without losing the requirements.
 
-The native MCP executable/import stay `imagen-mcp` / `imagen_mcp`; upstream 0.5.0 now uses distribution `imagen` and smart-tool CLI `imagen`. The planned public family repository is `amplifier-tool-imagen-provider`. Install the local checkout with `python3 -m pip install .`. See [consolidation boundaries](docs/CONSOLIDATION.md).
+For agents and developers adding image generation. Imagen Provider exposes one library, CLI and MCP interface, qualifies the configured provider against requested features and returns image paths and metadata through the same integration.
+
+[Explore the site](https://michaeljabbour.github.io/amplifier-tool-imagen-provider/)
+
+## What you get
+
+- **Keep the brief intact.** A required feature, such as a reference image, must remain a requirement when the provider is selected.
+- **Reuse one integration.** Call the stable native interface from an agent host or from Python while provider adapters handle the differences.
+- **Get an actionable setup failure.** When no configured provider can satisfy the request, stop with a clear capability or configuration error.
+
+## Start here
+
+```sh
+git clone https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git
+cd amplifier-tool-imagen-provider
+python3 -m venv .venv
+.venv/bin/python -m pip install .
+.venv/bin/imagen --help
+```
+
+The package is installed into the project virtual environment. The native guide below explains configuration and actual operations. Start by inspecting help; no provider or GitHub operation is needed to do that.
+
+## What you need
+
+- The quickstart uses macOS/Linux virtual-environment paths. On Windows, use the corresponding `.venv\Scripts` executables.
+- Native distribution: imagen; command: imagen; MCP entry point: python -m imagen_mcp.
+- Generation needs an approved OpenAI or Gemini credential and may incur provider charges.
+- The default config reads environment variables only. IMAGEN_MCP_CONFIG_PROFILE=local explicitly opts into the retained dotenv profile.
+
+## Evidence and limits
+
+Native provider/configuration tests and a clean-wheel MCP initialize/list-tools check passed with keys empty. Those checks establish integration behavior; generated image quality needs an actual reviewed output.
+
+The worked examples on the site are fictional. They illustrate the output and decisions; they are not user results or measured benefit. See [consolidation and runtime boundaries](docs/CONSOLIDATION.md) for retained interfaces and acceptance scope.
+
+---
 
 ## Retained native guide
 
@@ -10,7 +45,7 @@ The native MCP executable/import stay `imagen-mcp` / `imagen_mcp`; upstream 0.5.
 
 A Model Context Protocol (MCP) server for intelligent multi-provider image generation.
 
-[![CI](https://github.com/michaeljabbour/imagen/actions/workflows/ci.yml/badge.svg)](https://github.com/michaeljabbour/imagen/actions/workflows/ci.yml)
+[![CI](https://github.com/michaeljabbour/amplifier-tool-imagen-provider/actions/workflows/ci.yml/badge.svg)](https://github.com/michaeljabbour/amplifier-tool-imagen-provider/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -27,7 +62,7 @@ published on PyPI. Install it from that tag or a local checkout, then run the
 canonical module or console script:
 
 ```bash
-git clone https://github.com/michaeljabbour/imagen.git
+git clone https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git
 cd imagen
 python3 -m pip install .
 python -m imagen_mcp
@@ -38,7 +73,7 @@ For a reproducible VCS install, use the release tag:
 
 ```bash
 python3 -m pip install \
-  "imagen @ git+https://github.com/michaeljabbour/imagen.git@v0.5.0"
+  "imagen @ git+https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git@v0.5.0"
 ```
 
 The historical `python -m src.server` entry point remains available for
@@ -418,7 +453,7 @@ python3 -c "from imagen_mcp.providers import get_provider_registry; print(get_pr
 
 ```bash
 # Clone and install (runtime + dev tooling)
-git clone https://github.com/michaeljabbour/imagen.git
+git clone https://github.com/michaeljabbour/amplifier-tool-imagen-provider.git
 cd imagen
 pip install -e ".[dev]"          # or: uv sync --extra dev
 
