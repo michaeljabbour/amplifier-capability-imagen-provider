@@ -19,6 +19,10 @@
 
 # Changelog
 
+## 2026-10-29 — Film
+
+- Add a 70-second film to the site, with captions, a transcript, a poster and a 15-second cut. The example in it is fictional, and it reports no results.
+
 ## Unreleased
 
 ## 0.5.0 - 2026-09-25

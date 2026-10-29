@@ -2,6 +2,8 @@
 
 Generate the image without losing the requirements.
 
+Watch the [70-second film](https://michaeljabbour.github.io/amplifier-tool-imagen-provider/#film): a must that gets dropped to get a request through, and how the tool keeps requirements from bending. The example in it is fictional.
+
 For agents and developers adding image generation. Imagen Provider exposes one library, CLI and MCP interface, qualifies the configured provider against requested features and returns image paths and metadata through the same integration.
 
 [Explore the site](https://michaeljabbour.github.io/amplifier-tool-imagen-provider/)

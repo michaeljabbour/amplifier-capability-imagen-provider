@@ -153,5 +153,12 @@
     "proof_summary": "Native provider/configuration tests and a clean-wheel MCP initialize/list-tools check passed with keys empty. Those checks establish integration behavior; generated image quality needs an actual reviewed output.",
     "next_step": "Install in a virtual environment, inspect the tool schema and configure only the provider your request needs."
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-tool-imagen-provider"
+  "repository_url": "https://github.com/michaeljabbour/amplifier-tool-imagen-provider",
+  "film": {
+    "file": "imagen-provider-film",
+    "seconds": 70,
+    "heading": "A requirement is not a preference.",
+    "blurb": "In 70 seconds, Otto the octopus switchboard operator drops a must to get a request through: the line that takes reference sketches is dark, so he plugs in anyway. Imagen Provider never drops a must. If no configured provider can meet it, the call stops and says what to set up; a preference can fall back, with a note saying why. One interface serves agents, terminals and code, and you get the file and which provider made it. Captions are on the player; a transcript is below.",
+    "note": "The tea-tin label and its fox sketch are a fictional example. Provider names on screen are the tool’s real settings and messages. The film shows how the tool behaves; it does not report results."
+  }
 }
