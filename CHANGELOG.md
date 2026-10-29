@@ -1,3 +1,7 @@
+## 2026-10-29 — Publication-state clarification
+
+- Correct the consolidation guide’s stale prepublication statement. Preserve historical release evidence and runtime acceptance limits.
+
 ## Unreleased local consolidation
 
 ## 2026-10-28 — Newcomer guide corrections

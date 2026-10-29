@@ -1,8 +1,10 @@
-# Local capability consolidation — 2026-10-28
+# Capability consolidation
+
+Publication state checked October 29, 2026. The source ownership and runtime limits below remain separate from film production and outside-user acceptance.
 
 Generate images through one provider interface while preserving explicit feature requirements.
 
-Public catalog name: **Imagen Provider** (`amplifier-tool-imagen-provider`). The retained native distribution, Python import and CLI identities stay unchanged. This branch is a reviewable local consolidation; no remote rename or publication has happened.
+Public catalog name: **Imagen Provider** (`amplifier-tool-imagen-provider`). The retained native distribution, Python import and CLI identities stay unchanged. The [canonical repository](https://github.com/michaeljabbour/amplifier-tool-imagen-provider) and [public site](https://michaeljabbour.github.io/amplifier-tool-imagen-provider/) are published. This record describes ownership and runtime boundaries; each dated evaluation applies only to its recorded source and environment.
 
 Provider invocation can cost money and requires an approved environment credential. Selector/mock tests do not generate images.
 
