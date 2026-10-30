@@ -100,3 +100,4 @@ _site/
 *.pyc
 
 uv.lock
+.research/

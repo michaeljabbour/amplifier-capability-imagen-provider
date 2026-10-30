@@ -26,7 +26,7 @@
   "examples": [
     {
       "title": "Fictional provider requirement",
-      "brief": "Inspect Imagen Provider’s installed help and MCP schema. Prepare a fictional packaging-image request that requires a reference image and an explicit output path. Explain which configured provider can meet it or what setup is missing. Do not make a paid generation call during this inspection.",
+      "brief": "Inspect Imagen Provider\u2019s installed help and MCP schema. Prepare a fictional packaging-image request that requires a reference image and an explicit output path. Explain which configured provider can meet it or what setup is missing. Do not make a paid generation call during this inspection.",
       "before": "A missing provider silently drops the reference requirement.",
       "after": "The selector either picks the available capable provider or stops with a setup error.",
       "why": "Provider availability must not erase a requested feature.",
@@ -141,8 +141,8 @@
       "A free offline image generator.",
       "A video provider; the older video stub is not a functioning capability."
     ],
-    "quickstart_prompt": "Inspect Imagen Provider’s installed help and MCP schema. Prepare a fictional packaging-image request that requires a reference image and an explicit output path. Explain which configured provider can meet it or what setup is missing. Do not make a paid generation call during this inspection.",
-    "output_preview": "Request\n  task: fictional packaging mockup\n  required feature: reference-image support\n  output: caller-selected image path\n\nSelection\n  capable configured provider → submit explicit request\n  no capable configured provider → setup/capability error\n\nResult after generation: image bytes or path plus provider metadata",
+    "quickstart_prompt": "Inspect Imagen Provider\u2019s installed help and MCP schema. Prepare a fictional packaging-image request that requires a reference image and an explicit output path. Explain which configured provider can meet it or what setup is missing. Do not make a paid generation call during this inspection.",
+    "output_preview": "Request\n  task: fictional packaging mockup\n  required feature: reference-image support\n  output: caller-selected image path\n\nSelection\n  capable configured provider \u2192 submit explicit request\n  no capable configured provider \u2192 setup/capability error\n\nResult after generation: image bytes or path plus provider metadata",
     "example_note": "Fictional request and routing outline. No image was generated and no provider was invoked for this example.",
     "install_notes": [
       "Native distribution: imagen; command: imagen; MCP entry point: python -m imagen_mcp.",
@@ -153,12 +153,87 @@
     "proof_summary": "Native provider/configuration tests and a clean-wheel MCP initialize/list-tools check passed with keys empty. Those checks establish integration behavior; generated image quality needs an actual reviewed output.",
     "next_step": "Install in a virtual environment, inspect the tool schema and configure only the provider your request needs."
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-tool-imagen-provider",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-imagen-provider",
+  "name": "amplifier-capability-imagen-provider",
+  "legacy_names": [
+    "amplifier-tool-imagen-provider"
+  ],
+  "contract_version": "amplifier-capability/v1",
+  "version": "0.5.0",
+  "version_basis": "Existing release metadata",
+  "engine": "LLM",
+  "engine_components": {
+    "selector_mcp_adapter": "None",
+    "image_generation": "External generative model (LLM category is the nearest rubric engine; multimodal provider owns synthesis)"
+  },
+  "surfaces": [
+    "cli",
+    "mcp",
+    "python-library"
+  ],
+  "portable_method": null,
+  "interfaces": {
+    "portable": null,
+    "native": {
+      "distribution": "imagen",
+      "entrypoints": {
+        "imagen-mcp": "imagen_mcp.server:main",
+        "imagen-mcp-cli": "imagen_mcp.cli:main",
+        "imagen": "src.smart_tool.cli:main"
+      },
+      "docs": [
+        "docs/CONSOLIDATION.md",
+        "docs/PROVIDER_SELECTION.md",
+        "docs/RELEASE_EVIDENCE_0.4.0.md"
+      ],
+      "status": "Existing declared entrypoints preserved; runtime signatures, service access and installation tests remain separate evidence."
+    },
+    "host_adapters": {
+      "amplifier_bundle": null,
+      "grants_autonomy": false
+    }
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "writes": [
+        "Selected discovery folders",
+        ".capability-state transaction backups"
+      ],
+      "grants_runtime_permissions": false
+    },
+    "runtime": {
+      "status": "Host/caller authorizes each operation; installation is not a tool allowlist or standing approval.",
+      "declared_boundaries": [
+        "Provider invocation can cost money and requires an approved environment credential. Selector/mock tests do not generate images.",
+        "The parked video-mcp stub is retained separately as reference; it is not advertised as a functioning video provider.",
+        "Server defaults to environment-only configuration; IMAGEN_MCP_CONFIG_PROFILE=local explicitly enables the retained dotenv setup profile."
+      ]
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "native_runtime_inventory": "See native documentation; no credentials are bundled or inferred."
+    }
+  },
+  "dataflow": {
+    "installation": "Read pinned tracked portable source and copy locally with SHA-256 receipts. No source text is transmitted.",
+    "method": "Caller supplies authorized context; existing promise and boundaries govern output.",
+    "native_runtime": "Provider/network/storage flows are owned by native interfaces and host authorization; these files do not enable them."
+  },
+  "source_policy": {
+    "revision": "Explicit full40-character Git commit required at installation; never infer latest.",
+    "repository_rename": "Public identity may change; skill folder, imports, entrypoints, tool IDs and schemas remain stable.",
+    "research": ".research/market remains local and ignored; AGENTS governs refresh."
+  },
   "film": {
     "file": "imagen-provider-film",
     "seconds": 70,
     "heading": "A requirement is not a preference.",
     "blurb": "In 70 seconds, Otto the octopus switchboard operator drops a must to get a request through: the line that takes reference sketches is dark, so he plugs in anyway. Imagen Provider never drops a must. If no configured provider can meet it, the call stops and says what to set up; a preference can fall back, with a note saying why. One interface serves agents, terminals and code, and you get the file and which provider made it. Captions are on the player; a transcript is below.",
-    "note": "The tea-tin label and its fox sketch are a fictional example. Provider names on screen are the tool’s real settings and messages. The film shows how the tool behaves; it does not report results."
-  }
+    "note": "The tea-tin label and its fox sketch are a fictional example. Provider names on screen are the tool\u2019s real settings and messages. The film shows how the tool behaves; it does not report results."
+  },
+  "repository_aliases": [
+    "https://github.com/michaeljabbour/amplifier-tool-imagen-provider"
+  ]
 }
